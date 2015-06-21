@@ -34,9 +34,9 @@
 							<span class="icon fa-bookmark-o" style="font-size:2em;float:left"></span>
 							<h1 id="title" style="font-size:1.7em">Stations</h1>
 							<ul id = "list" style= "display:none;margin-top: -15px; float: right; list-style-type: none;" onhover = "myFunctionHover()">
-								<li>George Washington</li>
-								<li>Civil War</li>
-								<li>Naploean</li>
+								<li onclick = "myFunctionSendTag()">George Washington</li>
+								<li onclick = "myFunctionSendTag()">Civil War</li>
+								<li onclick = "myFunctionSendTag()">Naploean</li>
 							</ul>
 						</div>
 
@@ -111,6 +111,11 @@
 			function myFunctionClickNext() {
 				document.getElementById('player').src = getNext();
 			} 
+			</script>
+			<script>
+			function myFunctionSendTag(){
+			
+			}
 			</script>
 	</body>
 </html>
