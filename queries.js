@@ -19,7 +19,7 @@ var makeRequest = function(options, onEnd) {
     req.end();
 }
 
-var findEpisodes = function(radioUrl, callback) {
+var findEpisodes = function(title, radioUrl, callback) {
     var options = {
         host: 'itunes.so-nik.com',
         path: '/getfeed.php?terms=' + radioUrl,
@@ -57,7 +57,6 @@ var findEpisodes = function(radioUrl, callback) {
                     makeRequest(options, function (str) {
                         var inItem = false;
                         var currElem = "";
-                        var title = "";
                         var description = "";
                         var url = "";
 
@@ -77,14 +76,12 @@ var findEpisodes = function(radioUrl, callback) {
                             ontext: function(text) {
                                 if (currElem === "description") {
                                     description = text;
-                                } else if (currElem === "title") {
-                                    title = text;
                                 }
                             },
                             onclosetag: function(name) {
                                 if(name === "item") {
                                     if (inItem) {
-                                        results.push({'title': title, 'link': url, 'description': description});
+                                        results.push({'title': title, 'url': url,});
                                         inItem = false;
                                     }
                                 } else if (name === "description") {
@@ -147,11 +144,11 @@ var findPodcasts = function(name, period, location, callback) {
                 };
 
                 console.log("calling findeps");
-                findEpisodes(map['radioUrl'], function(err, results) {
+                findEpisodes(map['title'], map['radioUrl'], function(err, results) {
                     map['results'] = results;
                     full_podcasts.push(map);
                     if (full_podcasts.length >= len) {
-                        callback(null, map)
+                        callback(null, map['results'])
                     }
                 });
             }

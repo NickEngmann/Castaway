@@ -14,27 +14,27 @@ app.locals.basedir = __dirname + "/public";
 
 playlists = [
     [
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_01_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_02_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_03_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_04_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_05_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_06_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_07_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_08_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_09_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_10_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_11_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_12_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_13_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_14_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_15_nye_64kb.mp3",
-        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_16_nye_64kb.mp3",
+        {"title": "A Comic History of the U.S 01", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_01_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 02", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_02_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 03", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_03_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 04", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_04_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 05", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_05_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 06", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_06_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 07", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_07_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 08", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_08_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 09", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_09_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 10", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_10_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 11", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_11_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 12", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_12_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 13", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_13_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 14", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_14_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 15", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_15_nye_64kb.mp3"},
+        {"title": "A Comic History of the U.S 16", "url": "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_16_nye_64kb.mp3"},
     ],
     [
-        "http://traffic.libsyn.com/civilwarpodcast/CivilWar84.mp3",
-        "http://traffic.libsyn.com/civilwarpodcast/CivilWar25.mp3",
-        "http://traffic.libsyn.com/civilwarpodcast/CivilWar42.mp3"
+        {"title": "Civil War 84", "url": "http://traffic.libsyn.com/civilwarpodcast/CivilWar84.mp3"},
+        {"title": "Civil War 25", "url": "http://traffic.libsyn.com/civilwarpodcast/CivilWar25.mp3"},
+        {"title": "Civil War 42", "url": "http://traffic.libsyn.com/civilwarpodcast/CivilWar42.mp3"}
     ],
     [
         
@@ -43,6 +43,7 @@ playlists = [
 
 currentPlaylist = 0;
 currentEpisode = 0;
+searchPlaylist = [];
 
 app.get('/', function(request, response) {
     response.redirect('/index');
@@ -60,8 +61,13 @@ app.post('/setPlaylist', function(request, response) {
 });
 
 app.post('/getNext', function(request, response) {
-    currentEpisode = (currentEpisode + 1) % playlists[currentPlaylist].length;
-    response.send(playlists[currentPlaylist][currentEpisode]);
+    if (currentPlaylist === "search") {
+        currentEpisode = (currentEpisode + 1) % searchPlaylist.length;
+        response.send(searchPlaylist[currentEpisode]);
+    } else {
+        currentEpisode = (currentEpisode + 1) % playlists[currentPlaylist].length;
+        response.send(playlists[currentPlaylist][currentEpisode]);        
+    }
 });
 
 app.post('/search', function(request, response) {
@@ -73,8 +79,10 @@ app.post('/search', function(request, response) {
         if (err) {
             console.log(err);
         } else {
-            console.log(results);
-            response.redirect('/index')
+            console.log(results);            
+            searchPlaylist = results;
+            currentPlaylist = "search";
+            currentEpisode = 0;
         }
     });
 });

@@ -56,7 +56,7 @@
       </div>
     </div>
     <div id="main" style="margin-left:12%">
-      <h1><center>Title foo</center></h1>
+      <h1><center id="podtitle">Title foo</center></h1>
     </div>
 
     <!-- Scripts -->
@@ -102,7 +102,22 @@
     </script>
     <script>
       function myFunctionClickNext() {
-      document.getElementById('player').src = getNext();
+      $.ajax({
+      type: "POST",
+      url: "/getNext",
+      success: function(data)
+      {
+      $('#podtitle').text(data.title);
+      $('#player').attr("src", data.url);
+      $('#play').click();
+      },
+      failure: function()
+      {
+      },
+      complete: function()
+      {
+      }
+      });
       }
     </script>
     <script>
@@ -119,7 +134,8 @@
       data: { idx: idx },
       success: function(data)
       {
-      $('#player').attr("src", data);
+      $('#podtitle').text(data.title);
+      $('#player').attr("src", data.url);
       $('#play').click();
       },
       failure: function()
