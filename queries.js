@@ -69,6 +69,7 @@ var findEpisodes = function(radioUrl, callback) {
                                 }
                                 else if(inItem && name === "enclosure") {
                                     url = attribs.url;
+                                    console.log(url);
                                 } else {
                                     currElem = name;
                                 }
@@ -135,6 +136,8 @@ var findPodcasts = function(name, period, location, callback) {
                     title: idxs[i]['trackName'],
                     artist: idxs[i]['artistName'],
                     radioUrl: idxs[i]['radioStationUrl'],
+                    tags: idxs[i]['keywords'],
+
                     img: {
                         30:  idxs[i]['artworkUrl30'],
                         60:  idxs[i]['artworkUrl60'],
