@@ -22,7 +22,31 @@ $('#test').click(function() {
     });
 });
 
-fn playlist(playlist) {
-    $('#player').attr("src", playlist[0]);
-    $('#player').play();
+fn playlist(idx) {
+    alert(playlist);
+    
+    $.ajax({
+        type: "POST",
+        url: "/setPlaylist",
+        data: { idx: idx },
+        success: function(data)
+        {
+            alert(data);
+            /*if (data.result) {
+                $("#preview").html("<p>"+data.result+"<\p>");
+                $("#submit").prop("disabled", false);
+                $("#compileLoader").hide("fast");
+            } else {
+                window.location = data;
+            }*/
+            $('#player').attr("src", data);
+            $('#player').play();
+        },
+        failure: function()
+        {
+        },
+        complete: function()
+        {
+        }
+    });
 }
