@@ -78,11 +78,13 @@ app.post('/search', function(request, response) {
     queries.findPodcasts(name, period, location, function(err, results) {
         if (err) {
             console.log(err);
+            response.send("ok");
         } else {
             console.log(results);            
             searchPlaylist = results;
             currentPlaylist = "search";
             currentEpisode = 0;
+            response.send(searchPlaylist[0]);
         }
     });
 });
