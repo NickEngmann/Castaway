@@ -14,9 +14,30 @@ app.locals.basedir = __dirname + "/public";
 
 playlists = [
     [
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_01_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_02_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_03_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_04_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_05_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_06_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_07_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_08_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_09_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_10_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_11_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_12_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_13_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_14_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_15_nye_64kb.mp3",
+        "http://www.archive.org/download/comic_history_us_0807_librivox/comichistoryofus_16_nye_64kb.mp3",
+    ],
+    [
         "http://traffic.libsyn.com/civilwarpodcast/CivilWar84.mp3",
         "http://traffic.libsyn.com/civilwarpodcast/CivilWar25.mp3",
         "http://traffic.libsyn.com/civilwarpodcast/CivilWar42.mp3"
+    ],
+    [
+        
     ]
 ];
 
