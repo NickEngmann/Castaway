@@ -1009,27 +1009,118 @@
 
 /* Header */
 
-	#header h1 {
-		font-size: 2em;
-		margin: 0 0 0.55em 0;
-	}
-	#playerName {
-		line-height: 1.25em;
-  		top: 0px;
-  		position: fixed;
-  		left: 1px;
-  		font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-
-	}
-
-	#header p {
-		font-size: 1.35em;
-		line-height: 1.65em;
+	#header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 200px;
+		height: 100%;
+		color: #fff;
+		background: #222629 url("images/overlay.png");
+		box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1);
+		text-align: right;
+		opacity: .9;
 	}
 
-	#header a {
-		color: inherit;
+		#header .top {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+
+		#header .bottom {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		#header .icons {
+			font-size: 0.8em;
+			margin: 0 0 1em 0;
+			text-align: center;
+		}
+
+			#header .icons a {
+				color: #41484c;
+				-moz-transition: color 0.35s ease-in-out;
+				-webkit-transition: color 0.35s ease-in-out;
+				-ms-transition: color 0.35s ease-in-out;
+				transition: color 0.35s ease-in-out;
+			}
+
+				#header .icons a:hover {
+					color: #fff;
+				}
+
+	#logo {
+		position: relative;
+		margin: 1.75em 1.5em 1.5em 1.5em;
+		min-height: 48px;
+		cursor: default;
 	}
+
+		#logo h1 {
+			position: relative;
+			color: #fff;
+			font-weight: 600;
+			font-size: 1em;
+			line-height: 1em;
+		}
+
+		#logo p {
+			position: relative;
+			display: block;
+			font-size: 0.6em;
+			color: rgba(255, 255, 255, 0.5);
+			line-height: 1.25em;
+			margin: 0.5em 0 0 0;
+		}
+
+		#logo .image {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+	#nav ul li a {
+		display: block;
+		padding: 0.5em 1.5em 0.5em 1.5em;
+		color: rgba(255, 255, 255, 0.5);
+		text-decoration: none;
+		outline: 0;
+		border: 0;
+		-moz-transition: none;
+		-webkit-transition: none;
+		-ms-transition: none;
+		transition: none;
+	}
+
+		#nav ul li a span {
+			position: relative;
+			display: block;
+			font-size: 0.8em;
+		}
+
+			#nav ul li a span:before {
+				position: absolute;
+				left: 0;
+				color: #41484c;
+				text-align: center;
+				width: 1.25em;
+				line-height: 1.75em;
+			}
+
+		#nav ul li a.active {
+			background: rgba(0, 0, 0, 0.15);
+			box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
+			color: #fff;
+		}
+
+			#nav ul li a.active span:before {
+				color: #e27689;
+			}
 
 	@media screen and (max-width: 736px) {
 
@@ -1058,10 +1149,7 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		position: fixed;
-		left:1px;
-		top:40px;
-
+		position: relative;
 	}
 
 		#signup-form input[type="text"],
@@ -1196,3 +1284,6 @@
 			}
 
 		}
+#list li:hover {
+	font-weight: bold;
+}

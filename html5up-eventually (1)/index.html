@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Castaway</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="icon fa-ship" style="font-size:2em;float:left"></span>
+							<h1 id="title" style="font-size:1.8em">Castaway</h1>
+						</div>
+						<div id="logo" onmouseover = "myFunction()" onmouseout = "myFunc()">
+							<span  id = "dissapear"class="icon fa-search" style="font-size:2em;float:left"></span>
+							<input id ="widen"type="text" placeholder ="search" style="margin-radius:20px;border-radius: 20px;width: 115px;height: 30px;float: right;"></input>
+						</div>
+						<div id="logo" onclick = "myFunctionClick()" onfocusout = "myFunctionBlur()">
+							<span class="icon fa-bookmark-o" style="font-size:2em;float:left"></span>
+							<h1 id="title" style="font-size:1.8em">Stations</h1>
+							<ul id = "list" style= "display:none;margin-top: -15px; float: right; list-style-type: none;" onhover = "myFunctionHover()">
+								<li>George Washington</li>
+								<li>Civil War</li>
+								<li>Naploean</li>
+							</ul>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+						</nav
+
+				</div>
+			</div>
+			<div id="main">
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				
+			</footer>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>
+				function myFunction() {
+    			document.getElementById("dissapear").style.display = "none";
+    			document.getElementById("widen").style.width = "100%";
+				}
+			</script>
+			<script>
+				function myFunc() {
+    			document.getElementById("dissapear").style.display = "block";
+    			document.getElementById("widen").style.width = "115px";
+				}
+			</script>
+			<script>
+				function myFunctionClick(){
+					if(document.getElementById("list").style.display === "block") {
+						document.getElementById("list").style.display = "none";
+					}
+					else {
+						document.getElementById("list").style.display = "block";	
+					}
+								
+				}
+			</script>
+			<script>
+				function myFunctionBlur(){
+					document.getElementById("list").style.display = "none";
+				}
+			</script>
+			<script>
+				function myFunctionHover(){
+					debugger
+					document.getElementById("list").style.font-size = "bold";
+				}
+			</script>
+
+	</body>
+</html>
