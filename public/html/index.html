@@ -30,9 +30,8 @@
         </div>
         <div id="logo" onmouseover = "myFunction()" onmouseout = "myFunc()">
           <span  id = "dissapear"class="icon fa-search" style="font-size:2em;float:left"></span>
-          <form id="searchform" method="post" action="/search">
-            <input id ="widen"type="text" placeholder ="search" name="name" style="margin-radius:20px;border-radius: 20px;width: 115px;height: 30px;float: right;">
-          <input type="submit" value="Submit">
+          <input id ="widen" type="text" placeholder ="search" name="name" style="margin-radius:20px;border-radius: 20px;width: 115px;height: 30px;float: right;">
+          <input type="submit" value="Submit" onclick="submitSearch()">
           </form>
         </div>
         <div id="logo" onfocusout = "myFunctionBlur()">
@@ -151,9 +150,8 @@
       }
     </script>
     <script>      
-      $("searchform").submit(function(event) {
-      event.preventDefault();
-      var val = $(this).find("input[name='name']").val();
+      function submitSearch() {
+      var val = $("#widen").val();
       $.ajax({
       type: "POST",
       url: "/search",
@@ -171,7 +169,7 @@
       {
       }
       });
-      });
+      };
     </script>
   </body>
 </html>

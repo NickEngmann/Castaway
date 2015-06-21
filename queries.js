@@ -114,6 +114,7 @@ var findPodcasts = function(name, period, location, callback) {
         attribute: "descriptionTerm",
     };
 
+    console.log("query: " + query['term']);
     itunes(query, function(err, data) {
         if (err) {
             callback(err, null)

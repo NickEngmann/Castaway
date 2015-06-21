@@ -80,7 +80,7 @@ app.post('/search', function(request, response) {
             console.log(err);
             response.send("ok");
         } else {
-            console.log(results);            
+            console.log(results);  
             searchPlaylist = results;
             currentPlaylist = "search";
             currentEpisode = 0;
