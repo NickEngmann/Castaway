@@ -43,9 +43,10 @@
 					<!-- Nav -->
 						<div style="margin-top:300px">
 							<audio src="http://traffic.libsyn.com/civilwarpodcast/CivilWar21b.mp3" id="player"></audio> 
-							<button id = "play" class  = "icon fa-play" style="color:white;font-size:25px;background-color:#222629;left:-14px"></button>
-							<button id="pause" class = "icon fa-pause" style="font-size:25px;color:white;background-color:#222629;left:-45px"></button>
-							<progress id="seekbar" value="0" max="1" style="width:200px;"></progress>
+							<button id = "play" class  = "icon fa-play" style="color:white;font-size:25px;background-color:#222629;left:-35px"></button>
+							<button id="pause" class = "icon fa-pause" style="font-size:25px;color:white;background-color:#222629;left:-65px"></button>
+							<button id="next" class = "icon fa-step-forward" style="font-size:27px;color:white;background-color:#222629;left:-20px;bottom:71px" onclick = "myFunctionClickNext()"></button>
+							<progress id="seekbar" value="0" max="1" style="width:200px; bottom:90px;position:relative"></progress>
 						</div>
 						<div>
 						</div>
@@ -62,14 +63,14 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				function myFunction() {
-    			document.getElementById("dissapear").style.display = "none";
-    			document.getElementById("widen").style.width = "100%";
+				document.getElementById("dissapear").style.display = "none";
+				document.getElementById("widen").style.width = "100%";
 				}
 			</script>
 			<script>
 				function myFunc() {
-    			document.getElementById("dissapear").style.display = "block";
-    			document.getElementById("widen").style.width = "115px";
+				document.getElementById("dissapear").style.display = "block";
+				document.getElementById("widen").style.width = "115px";
 				}
 			</script>
 			<script>
@@ -95,19 +96,21 @@
 				}
 			</script>
 			<script>
-			$('#play').on('click', function() {
-				console.log('here')
-    document.getElementById('player').play();
-});
+				$('#play').on('click', function() {
+					document.getElementById('player').play();
+				});
 
-$('#pause').on('click', function() {
-    document.getElementById('player').pause();
-});
-
-$('#player').on('timeupdate', function() {
-    $('#seekbar').attr("value", this.currentTime / this.duration);
-});
+				$('#pause').on('click', function() {
+					document.getElementById('player').pause();
+				});
+				$('#player').on('timeupdate', function() {
+					$('#seekbar').attr("value", this.currentTime / this.duration);
+				});
 			</script>
-
+			<script>
+			function myFunctionClickNext() {
+				document.getElementById('player').src = getNext();
+			} 
+			</script>
 	</body>
 </html>
