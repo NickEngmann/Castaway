@@ -21,3 +21,8 @@ $('#test').click(function() {
         }
     });
 });
+
+fn playlist(playlist) {
+    $('#player').attr("src", playlist[0]);
+    $('#player').play();
+}

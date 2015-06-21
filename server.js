@@ -12,12 +12,35 @@ app.set('view engine', 'php');
 //ejs
 app.locals.basedir = __dirname + "/public";
 
+playlists = [
+    [
+        "http://traffic.libsyn.com/civilwarpodcast/CivilWar84.mp3",
+        "http://traffic.libsyn.com/civilwarpodcast/CivilWar25.mp3",
+        "http://traffic.libsyn.com/civilwarpodcast/CivilWar42.mp3"
+    ]
+];
+
+currentPlaylist = 0;
+currentEpisode = 0;
+
 app.get('/', function(request, response) {
     response.redirect('/index');
 });
 
 app.get('/index', function(request, response) {
-    response.render('index.jade');
+    response.render('index.jade', { playlists: playlists });
+});
+
+app.post('/setPlaylist', function(request, response) {
+    var idx = request.body.idx;
+    currentPlaylist = idx;
+    currentEpisode = 0;
+    response.send(playlists[idx][0]);
+});
+
+app.post('/getNext', function(request, response) {
+    currentEpisode = (currentEpisode + 1) % playlists[currentPlaylist].length;
+    response.send(playlists[currentPlaylist][currentEpisode]);
 });
 
 app.post('/search', function(request, response) {
