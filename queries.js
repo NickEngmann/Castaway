@@ -26,7 +26,9 @@ var findEpisodes = function(radioUrl, callback) {
         method: 'POST'
     };
 
+    console.log("making request");
     makeRequest(options, function (str) {
+        console.log("made request");
         var link = false;
         var found = false;
 
@@ -38,7 +40,10 @@ var findEpisodes = function(radioUrl, callback) {
                 }
             },
             ontext: function(text){
+                console.log("link: " + link);
+                console.log("ontext: " + text);
                 if (link && !found) {
+                    console.log(text);
                     found = true;
                     var partition = text.split("://");
                     var host_path = partition[1].split("/");
@@ -117,11 +122,14 @@ var findPodcasts = function(name, period, location, callback) {
         } else {
             var full_podcasts = [];
             var idxs = [];
-            var len = Math.max(5, data['results'].length);
-            for (i in len) {
+            var len = Math.min(1, data['results'].length);
+
+            console.log("calc: " + len);
+            for (i = 0; i < len; i++) {
                 idxs.push(data['results'].splice(Math.floor(Math.random()*data['results'].length), 1)[0]);
             }
 
+            console.log(idxs.length);
             for (i in idxs) {
                 var map = {
                     title: idxs[i]['trackName'],
@@ -135,6 +143,7 @@ var findPodcasts = function(name, period, location, callback) {
                     }
                 };
 
+                console.log("calling findeps");
                 findEpisodes(map['radioUrl'], function(err, results) {
                     map['results'] = results;
                     full_podcasts.push(map);

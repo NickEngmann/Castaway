@@ -1,13 +1,15 @@
 var express = require('express');
 var queries = require('./queries.js');
 var app = express();
+var php = require('php-node')({bin:"php"});
 
 app.use(express.bodyParser());
 app.use(express.logger('dev'));
 app.set('views', __dirname + '/views');
 app.use(express.static('public'));
-app.set('view engine', 'ejs');
-
+app.engine('php', php);
+app.set('view engine', 'php');
+//ejs
 app.locals.basedir = __dirname + "/public";
 
 app.get('/', function(request, response) {
