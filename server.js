@@ -1,6 +1,8 @@
 var express = require('express');
+var queries = require('./queries.js');
 var app = express();
 
+app.use(express.bodyParser());
 app.use(express.logger('dev'));
 app.set('views', __dirname + '/views');
 app.use(express.static('public'));
@@ -16,8 +18,23 @@ app.get('/index', function(request, response) {
     response.render('index.jade');
 });
 
+app.post('/search', function(request, response) {
+    var name     = request.body.name;
+    var period   = request.body.period;
+    var location = request.body.location;
+
+    queries.findPodcasts(name, period, location, function(err, results) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(results);
+            response.redirect('/index')
+        }
+    });
+});
+
 var server = app.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;
-    console.log('Example app listening at http://%s:%s', host, port);
+    console.log('CastAway listening at http://%s:%s', host, port);
 });
