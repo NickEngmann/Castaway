@@ -19,7 +19,7 @@
   <body>
 
     <!-- Header -->
-    <div id="header">
+    <div id="header" style = "width:300px;">
 
       <div class="top">
 
@@ -30,8 +30,8 @@
         </div>
         <div id="logo" onmouseover = "myFunction()" onmouseout = "myFunc()">
           <span  id = "dissapear"class="icon fa-search" style="font-size:2em;float:left"></span>
-          <input id ="widen" type="text" placeholder ="search" name="name" style="margin-radius:20px;border-radius: 20px;width: 115px;height: 30px;float: right;">
-          <input type="submit" value="Submit" onclick="submitSearch()">
+          <input id ="widen" type="text" onkeydown = "if(event.keyCode == 13) document.getElementById('submitButton').click()"placeholder ="search" name="name" style="margin-radius:20px;border-radius: 20px;width: 190px;height: 30px;float: right;">
+         <input type="submit" value="Submit" onclick="submitSearch()" id = "submitButton" style = "position:absolute;left:-99999px;width:1px;height:1px;"> 
           </form>
         </div>
         <div id="logo" onfocusout = "myFunctionBlur()">
@@ -47,10 +47,10 @@
         <!-- Nav -->
         <div style="margin-top:300px">
           <audio src="http://traffic.libsyn.com/civilwarpodcast/CivilWar21b.mp3" id="player"></audio>
-          <button id = "play" class  = "icon fa-play" style="color:white;font-size:25px;background-color:#222629;left:-35px"></button>
-          <button id="pause" class = "icon fa-pause" style="font-size:25px;color:white;background-color:#222629;left:-65px"></button>
-          <button id="next" class = "icon fa-step-forward" style="font-size:27px;color:white;background-color:#222629;left:-20px;bottom:71px" onclick = "myFunctionClickNext()"></button>
-          <progress id="seekbar" value="0" max="1" style="width:200px; bottom:90px;position:relative"></progress>
+          <button id = "play" class  = "icon fa-play" style="color:white;font-size:30px;background-color:#222629;left: 20px;bottom:70px;"></button>
+          <button id="pause" class = "icon fa-pause" style="font-size:30px;color:white;background-color:#222629;left:-20px;bottom:70px"></button>
+          <button id="next" class = "icon fa-step-forward" style="font-size:30px;color:white;background-color:#222629;left:-60px;bottom:70px" onclick = "myFunctionClickNext()"></button>
+          <progress id="seekbar" value="0" max="1" style="width:300px; bottom:90px;position:relative"></progress>
         </div>
         <div>
         </div>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div id="main" style="margin-left:12%">
-      <h1><center id="podtitle">Title foo</center></h1>
+      <h1><center id="podtitle"></center></h1>
     </div>
 
     <!-- Scripts -->
@@ -74,7 +74,7 @@
     <script>
       function myFunc() {
       document.getElementById("dissapear").style.display = "block";
-      document.getElementById("widen").style.width = "115px";
+      document.getElementById("widen").style.width = "190px";
       }
     </script>
     <script>
