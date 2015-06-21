@@ -39,9 +39,24 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'images/bg01.jpg': 'center',
-							'images/bg02.jpg': 'center',
-							'images/bg03.jpg': 'center'
+							'images/1st_Minnesota_at_Gettysburg.jpg': 'center',
+							'images/2449_95.jpg': 'center',
+							'images/932805-george-washington.jpg': 'center',
+							'images/2118425-george_washington_1795.jpg': 'center',
+							'images/3513086842_93bbc4145c_b.jpg': 'center',
+							'images/Carpetbagger4.jpg': 'center',
+							'images/Civil_war_reenactment_1.jpg': 'center',
+							'images/Civil-War-Skirmish-6-10-032-Jayson-Scadden.jpg': 'center',
+							'images/civil-war.jpg': 'center',
+							'images/DEATH-OF-A-PRESIDENT-Geroge-Washington-monitor.jpg': 'center',
+							'images/George_Washington_by_Gilbert_Stuart.jpg': 'center',
+							'images/Jacques_Louis_David_-_Bonaparte_franchissant_le_Grand_Saint-Bernard,_20_mai_1800_-_Google_Art_Project.jpg': 'center',
+							'images/MTIwNjA4NjMzMjIxNzExMzcy.jpg': 'center',
+							'images/o-NAPOLEON-BONAPARTE-facebook.jpg': 'center',
+							'images/o-NAPOLEON-facebook.jpg': 'center',
+							'images/Paul_Delaroche_-_Napoleon_Crossing_the_Alps_-_Google_Art_Project_2.jpg': 'center',
+							'images/Stones-River-Natl-Battlefield-Murfreesboro.jpg': 'center',
+							'images/washington_crossing_the_delaware_by_emanuel_leutze_mma-nyc_1851.jpg': 'center'
 						},
 
 					// Delay.

@@ -155,7 +155,6 @@
 		transition: opacity 2s ease-in-out;
 		height: 100%;
 		left: 0;
-		opacity: 0.25;
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -1286,4 +1285,9 @@
 		}
 #list li:hover {
 	font-weight: bold;
+	color: #1cb495;
+}
+#play{
+	text-decoration: none;
+}
 }

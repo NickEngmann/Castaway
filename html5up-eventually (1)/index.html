@@ -23,7 +23,7 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<span class="icon fa-ship" style="font-size:2em;float:left"></span>
+							<span class="icon fa-ship" style="font-size:2em;float:left;color:#1cb495"></span>
 							<h1 id="title" style="font-size:1.8em">Castaway</h1>
 						</div>
 						<div id="logo" onmouseover = "myFunction()" onmouseout = "myFunc()">
@@ -32,7 +32,7 @@
 						</div>
 						<div id="logo" onclick = "myFunctionClick()" onfocusout = "myFunctionBlur()">
 							<span class="icon fa-bookmark-o" style="font-size:2em;float:left"></span>
-							<h1 id="title" style="font-size:1.8em">Stations</h1>
+							<h1 id="title" style="font-size:1.7em">Stations</h1>
 							<ul id = "list" style= "display:none;margin-top: -15px; float: right; list-style-type: none;" onhover = "myFunctionHover()">
 								<li>George Washington</li>
 								<li>Civil War</li>
@@ -41,21 +41,24 @@
 						</div>
 
 					<!-- Nav -->
-						<nav id="nav">
-						</nav
+						<div style="margin-top:300px">
+							<audio src="http://traffic.libsyn.com/civilwarpodcast/CivilWar21b.mp3" id="player"></audio> 
+							<button id = "play" class  = "icon fa-play" style="color:white;font-size:25px;background-color:#222629;left:-14px"></button>
+							<button id="pause" class = "icon fa-pause" style="font-size:25px;color:white;background-color:#222629;left:-45px"></button>
+							<progress id="seekbar" value="0" max="1" style="width:200px;"></progress>
+						</div>
+						<div>
+						</div>
 
 				</div>
 			</div>
-			<div id="main">
+			<div id="main" style="margin-left:12%">
+				<h1><center>Title foo</center></h1>
 			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				
-			</footer>
 
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
 				function myFunction() {
@@ -90,6 +93,20 @@
 					debugger
 					document.getElementById("list").style.font-size = "bold";
 				}
+			</script>
+			<script>
+			$('#play').on('click', function() {
+				console.log('here')
+    document.getElementById('player').play();
+});
+
+$('#pause').on('click', function() {
+    document.getElementById('player').pause();
+});
+
+$('#player').on('timeupdate', function() {
+    $('#seekbar').attr("value", this.currentTime / this.duration);
+});
 			</script>
 
 	</body>
